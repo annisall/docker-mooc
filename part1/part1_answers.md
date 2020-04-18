@@ -117,10 +117,20 @@ Searching..
 
 ## 1.6 
 
-Dockerfile produced can be [found here](dockerfiles/Dockerfile1_6).
+Dockerfile produced can be [found here](projects/1_6/Dockerfile).
 
-And the commands that were used to build and run it:
+And the commands that were used to build and run it (executed in /projects/1_6/:
 ``` 
 docker build -t docker-clock .
 docker run docker-clock
+```
+
+## 1.7
+
+Dockerfile can be [found here](projects/1_7/Dockerfile). 
+
+The commands that were used to build and run the container (in /projects/1_7/):
+```
+docker build -t curler .
+docker run -it curler
 ```
