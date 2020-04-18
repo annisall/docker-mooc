@@ -30,3 +30,15 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 ```
 
 Sreenshots of both outputs: ![Screenshot of outputs, showing they're empty](images/1_2.png)
+
+## 1.3 Hello Docker Hub
+
+```
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+```
+
+Screenshot: ![Screenshot with same contents as text above](images/1_3.png))
+
+## 1.4 
