@@ -35,7 +35,7 @@ Sreenshots of both outputs: ![Screenshot of outputs, showing they're empty](imag
 
 Command executed for completing the exercise (without output of downloading the image):
 ```
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -it devopsdockeruh/pull_exercise
+docker run -it devopsdockeruh/pull_exercise
 
 Give me the password: basics
 You found the correct password. Secret message is:
@@ -52,9 +52,9 @@ Screenshot:
 
 Commands (without outputs) executed to complete the exercise:
 ```
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -d devopsdockeruh/exec_bash_exercise
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker container ls
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker exec -it beautiful_margulis bash
+docker run -d devopsdockeruh/exec_bash_exercise
+docker container ls
+docker exec -it beautiful_margulis bash
 root@934a6179c912:/usr/app# tail -f ./logs.txt
 
 ```
@@ -72,15 +72,15 @@ read escape sequence
 
 And cleaning up the container (because I didn't use --rm flag when running it):
 ```
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker container ls
+docker container ls
 
 CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
 934a6179c912        devopsdockeruh/exec_bash_exercise   "node index"        6 minutes ago       Up 6 minutes                            beautiful_margulis
 
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker stop beautiful_margulis
+docker stop beautiful_margulis
 
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker rm beautiful_margulis
+docker rm beautiful_margulis
 
-Anniinas-MacBook-Pro:docker-mooc Boogi$ docker ps -a
+docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
