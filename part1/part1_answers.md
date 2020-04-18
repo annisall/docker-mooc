@@ -84,3 +84,43 @@ docker rm beautiful_margulis
 docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
+
+## 1.5 
+
+Command run in terminal tab 1:
+```
+docker run -it --name curl-helsinki ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Input website:
+```
+
+Command run in terminal tab 2:
+```
+docker attach --sig-proxy=false curl-helsinki
+read escape sequence
+
+docker exec -it curl-helsinki bash
+root@8478dbdf4a10:/# apt install curl
+```
+
+Then again in terminal tab 1:
+```
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+```
+
+## 1.6 
+
+Dockerfile produced [can be found here](dockerfiles/Dockerfile1_6)
+
+And the commands that were used to build and run it:
+``` 
+docker build -t docker-clock .
+docker run docker-clock
+```
