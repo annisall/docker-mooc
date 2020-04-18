@@ -33,12 +33,54 @@ Sreenshots of both outputs: ![Screenshot of outputs, showing they're empty](imag
 
 ## 1.3 Hello Docker Hub
 
+Command executed for completing the exercise (without output of downloading the image):
 ```
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -it devopsdockeruh/pull_exercise
+
 Give me the password: basics
 You found the correct password. Secret message is:
 "This is the secret message"
 ```
 
-Screenshot: ![Screenshot with same contents as text above](images/1_3.png))
+
+
+Screenshot: 
+
+![Screenshot with same contents as text above](images/1_3.png)
 
 ## 1.4 
+
+Commands (without outputs) executed to complete the exercise:
+```
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -d devopsdockeruh/exec_bash_exercise
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker container ls
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker exec -it beautiful_margulis bash
+root@934a6179c912:/usr/app# tail -f ./logs.txt
+
+```
+
+The output of the last command:
+```
+Secret message is:
+"Docker is easy"
+Sat, 18 Apr 2020 14:26:20 GMT
+Sat, 18 Apr 2020 14:26:23 GMT
+Sat, 18 Apr 2020 14:26:26 GMT
+Sat, 18 Apr 2020 14:26:29 GMT
+read escape sequence
+```
+
+And cleaning up the container (because I didn't use --rm flag when running it):
+```
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker container ls
+
+CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
+934a6179c912        devopsdockeruh/exec_bash_exercise   "node index"        6 minutes ago       Up 6 minutes                            beautiful_margulis
+
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker stop beautiful_margulis
+
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker rm beautiful_margulis
+
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+```
