@@ -117,7 +117,7 @@ Searching..
 
 ## 1.6 
 
-Dockerfile produced [can be found here](dockerfiles/Dockerfile1_6)
+Dockerfile produced can be [found here](dockerfiles/Dockerfile1_6).
 
 And the commands that were used to build and run it:
 ``` 
