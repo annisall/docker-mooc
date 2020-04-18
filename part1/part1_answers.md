@@ -12,7 +12,7 @@ e57ad8d1f355        nginx               "nginx -g 'daemon of…"   54 seconds ag
 8cf1c86578e6        nginx               "nginx -g 'daemon of…"   6 minutes ago       Exited (0) 5 minutes ago                        cool_gauss
 ```
 
-Screenshot of the output: ![Screenshot of output, for rows which shows that there were three containers, two of which are stopped.](images/1_2.png)
+Screenshot of the output: ![Screenshot of output, for rows which shows that there were three containers, two of which are stopped.](images/1_1.png)
 ## 1.2 Cleanup
 
 *Docker ps -a* outputs: 
