@@ -162,7 +162,7 @@ $ docker run -d -p 80:80 devopsdockeruh/ports_exercise
 
 ## 1.10
 
-After cloning (this repo)[https://github.com/docker-hy/frontend-example-docker] it was dockerized with Dockerfile which can be found [here](projects/1_10/Dockefile).
+After cloning [this repo](https://github.com/docker-hy/frontend-example-docker) it was dockerized with Dockerfile which can be found [here](projects/1_10/Dockefile).
 
 
 
