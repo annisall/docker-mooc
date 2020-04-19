@@ -35,7 +35,7 @@ Sreenshots of both outputs: ![Screenshot of outputs, showing they're empty](imag
 
 Command executed for completing the exercise (without output of downloading the image):
 ```console
-docker run -it devopsdockeruh/pull_exercise
+$ docker run -it devopsdockeruh/pull_exercise
 
 Give me the password: basics
 You found the correct password. Secret message is:
@@ -145,6 +145,24 @@ $ touch logs.txt
 
 Then we run the following command:
 ```console
+$ docker pull devopsdockeruh/first_volume_exercise
+
 $ docker run -v "$(pwd)"/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
 ```
+
+## 1.9
+
+Commands run for running the container with port mapping:
+
+```console
+$ docker pull devopsdockeruh/ports_exercise
+
+$ docker run -d -p 80:80 devopsdockeruh/ports_exercise
+```
+
+## 1.10
+
+After cloning (this repo)[https://github.com/docker-hy/frontend-example-docker] it was dockerized with Dockerfile which can be found [here](projects/1_10/Dockefile).
+
+
 
