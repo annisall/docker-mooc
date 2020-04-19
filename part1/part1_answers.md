@@ -162,7 +162,32 @@ $ docker run -d -p 80:80 devopsdockeruh/ports_exercise
 
 ## 1.10
 
-After cloning [this repo](https://github.com/docker-hy/frontend-example-docker) it was dockerized with Dockerfile which can be found [here](projects/1_10/Dockefile).
+After cloning [this repo](https://github.com/docker-hy/frontend-example-docker) it was dockerized with Dockerfile which can be found [here](projects/1_10/Dockerfile).
+
+## 1.11
+
+After cloning [this repo](https://github.com/docker-hy/backend-example-docker) it was dockerized with Dockerfile which can be found [here](projects/1_11/Dockerfile).
+
+Commands that were run to mount logs.txt file and to be able to connect to app running in port 8000 were:
+```console
+$ docker build -t bakki .
+$ touch logs.txt
+$ docker run -d -p 8000:8000 -v $(pwd)/logs.txt:/app/logs.txt bakki
+```
+
+## 1.12 
+
+Edited Dockerfile for [backend here](projects/1_12/Dockerfile_backend) and [frontend here](projects/1_12/Dockerfile_frontend).
+
+Commands used for running both backend and frontend:
+```console
+$ docker build -t bakki backend-example-docker/
+$ docker run -d -p 8000:8000 -v $(pwd)/logs.txt:/app/logs.txt bakki
+
+$ docker build -t frontti frontend-example-docker/
+$ docker run -d -p 5000:5000 frontti
+```
+
 
 
 
