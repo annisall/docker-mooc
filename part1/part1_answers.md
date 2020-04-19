@@ -35,7 +35,7 @@ Sreenshots of both outputs: ![Screenshot of outputs, showing they're empty](imag
 
 Command executed for completing the exercise (without output of downloading the image):
 ```console
-docker run -it devopsdockeruh/pull_exercise
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -it devopsdockeruh/pull_exercise
 
 Give me the password: basics
 You found the correct password. Secret message is:
@@ -52,9 +52,9 @@ Screenshot:
 
 Commands (without outputs) executed to complete the exercise:
 ```console
-docker run -d devopsdockeruh/exec_bash_exercise
-docker container ls
-docker exec -it beautiful_margulis bash
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -d devopsdockeruh/exec_bash_exercise
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker container ls
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker exec -it beautiful_margulis bash
 root@934a6179c912:/usr/app# tail -f ./logs.txt
 
 ```
@@ -72,16 +72,16 @@ read escape sequence
 
 And cleaning up the container (because I didn't use --rm flag when running it):
 ```console
-docker container ls
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker container ls
 
 CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
 934a6179c912        devopsdockeruh/exec_bash_exercise   "node index"        6 minutes ago       Up 6 minutes                            beautiful_margulis
 
-docker stop beautiful_margulis
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker stop beautiful_margulis
 
-docker rm beautiful_margulis
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker rm beautiful_margulis
 
-docker ps -a
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
@@ -89,16 +89,16 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 Command run in terminal tab 1:
 ```console
-docker run -it --name curl-helsinki ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -it --name curl-helsinki ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
 Input website:
 ```
 
 Command run in terminal tab 2:
 ```console
-docker attach --sig-proxy=false curl-helsinki
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker attach --sig-proxy=false curl-helsinki
 read escape sequence
 
-docker exec -it curl-helsinki bash
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker exec -it curl-helsinki bash
 root@8478dbdf4a10:/# apt install curl
 ```
 
@@ -121,8 +121,8 @@ Dockerfile produced can be [found here](projects/1_6/Dockerfile).
 
 And the commands that were used to build and run it (executed in /projects/1_6/:
 ```console
-docker build -t docker-clock .
-docker run docker-clock
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker build -t docker-clock .
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run docker-clock
 ```
 
 ## 1.7
@@ -131,6 +131,6 @@ Dockerfile can be [found here](projects/1_7/Dockerfile).
 
 The commands that were used to build and run the container (in /projects/1_7/):
 ```console
-docker build -t curler .
-docker run -it curler
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker build -t curler .
+Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -it curler
 ```
