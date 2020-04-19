@@ -4,7 +4,7 @@
 
 *Docker ps -a* outputs:
 
-```
+```console
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
 89f61703f3be        nginx               "nginx -g 'daemon of…"   52 seconds ago      Exited (0) 18 seconds ago                       hopeful_jepsen
 e57ad8d1f355        nginx               "nginx -g 'daemon of…"   54 seconds ago      Exited (0) 6 seconds ago                        angry_heyrovsky
@@ -17,7 +17,7 @@ Screenshot of the output: ![Screenshot of output, for rows which shows that ther
 
 *Docker ps -a* outputs: 
 
-```
+```console
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
 ```
@@ -25,7 +25,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 *Docker images* outputs:
 
-```
+```console
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ```
 
@@ -34,7 +34,7 @@ Sreenshots of both outputs: ![Screenshot of outputs, showing they're empty](imag
 ## 1.3 Hello Docker Hub
 
 Command executed for completing the exercise (without output of downloading the image):
-```
+```console
 docker run -it devopsdockeruh/pull_exercise
 
 Give me the password: basics
@@ -51,7 +51,7 @@ Screenshot:
 ## 1.4 
 
 Commands (without outputs) executed to complete the exercise:
-```
+```console
 docker run -d devopsdockeruh/exec_bash_exercise
 docker container ls
 docker exec -it beautiful_margulis bash
@@ -60,7 +60,7 @@ root@934a6179c912:/usr/app# tail -f ./logs.txt
 ```
 
 The output of the last command:
-```
+```console
 Secret message is:
 "Docker is easy"
 Sat, 18 Apr 2020 14:26:20 GMT
@@ -71,7 +71,7 @@ read escape sequence
 ```
 
 And cleaning up the container (because I didn't use --rm flag when running it):
-```
+```console
 docker container ls
 
 CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -88,13 +88,13 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ## 1.5 
 
 Command run in terminal tab 1:
-```
+```console
 docker run -it --name curl-helsinki ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
 Input website:
 ```
 
 Command run in terminal tab 2:
-```
+```console
 docker attach --sig-proxy=false curl-helsinki
 read escape sequence
 
@@ -103,7 +103,7 @@ root@8478dbdf4a10:/# apt install curl
 ```
 
 Then again in terminal tab 1:
-```
+```console
 helsinki.fi
 Searching..
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
@@ -120,7 +120,7 @@ Searching..
 Dockerfile produced can be [found here](projects/1_6/Dockerfile).
 
 And the commands that were used to build and run it (executed in /projects/1_6/:
-``` 
+```console
 docker build -t docker-clock .
 docker run docker-clock
 ```
@@ -130,7 +130,7 @@ docker run docker-clock
 Dockerfile can be [found here](projects/1_7/Dockerfile). 
 
 The commands that were used to build and run the container (in /projects/1_7/):
-```
+```console
 docker build -t curler .
 docker run -it curler
 ```
