@@ -130,7 +130,7 @@ Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run docker-clock
 Dockerfile can be [found here](projects/1_7/Dockerfile). 
 
 The commands that were used to build and run the container (in /projects/1_7/):
-```console
+```bash
 Anniinas-MacBook-Pro:docker-mooc Boogi$ docker build -t curler .
 Anniinas-MacBook-Pro:docker-mooc Boogi$ docker run -it curler
 ```
