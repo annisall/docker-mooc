@@ -4,7 +4,7 @@
 
 *Docker ps -a* outputs:
 
-```
+```console
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
 89f61703f3be        nginx               "nginx -g 'daemon of…"   52 seconds ago      Exited (0) 18 seconds ago                       hopeful_jepsen
 e57ad8d1f355        nginx               "nginx -g 'daemon of…"   54 seconds ago      Exited (0) 6 seconds ago                        angry_heyrovsky
@@ -17,7 +17,7 @@ Screenshot of the output: ![Screenshot of output, for rows which shows that ther
 
 *Docker ps -a* outputs: 
 
-```
+```console
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
 ```
@@ -25,7 +25,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 
 *Docker images* outputs:
 
-```
+```console
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ```
 
@@ -34,7 +34,7 @@ Sreenshots of both outputs: ![Screenshot of outputs, showing they're empty](imag
 ## 1.3 Hello Docker Hub
 
 Command executed for completing the exercise (without output of downloading the image):
-```
+```console
 docker run -it devopsdockeruh/pull_exercise
 
 Give me the password: basics
@@ -51,16 +51,16 @@ Screenshot:
 ## 1.4 
 
 Commands (without outputs) executed to complete the exercise:
-```
-docker run -d devopsdockeruh/exec_bash_exercise
-docker container ls
-docker exec -it beautiful_margulis bash
+```console
+$ docker run -d devopsdockeruh/exec_bash_exercise
+$ docker container ls
+$ docker exec -it beautiful_margulis bash
 root@934a6179c912:/usr/app# tail -f ./logs.txt
 
 ```
 
 The output of the last command:
-```
+```console
 Secret message is:
 "Docker is easy"
 Sat, 18 Apr 2020 14:26:20 GMT
@@ -71,39 +71,39 @@ read escape sequence
 ```
 
 And cleaning up the container (because I didn't use --rm flag when running it):
-```
-docker container ls
+```console
+$ docker container ls
 
 CONTAINER ID        IMAGE                               COMMAND             CREATED             STATUS              PORTS               NAMES
 934a6179c912        devopsdockeruh/exec_bash_exercise   "node index"        6 minutes ago       Up 6 minutes                            beautiful_margulis
 
-docker stop beautiful_margulis
+$ docker stop beautiful_margulis
 
-docker rm beautiful_margulis
+$ docker rm beautiful_margulis
 
-docker ps -a
+$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
 ## 1.5 
 
 Command run in terminal tab 1:
-```
-docker run -it --name curl-helsinki ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+```console
+$ docker run -it --name curl-helsinki ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
 Input website:
 ```
 
 Command run in terminal tab 2:
-```
-docker attach --sig-proxy=false curl-helsinki
+```console
+$ docker attach --sig-proxy=false curl-helsinki
 read escape sequence
 
-docker exec -it curl-helsinki bash
+$ docker exec -it curl-helsinki bash
 root@8478dbdf4a10:/# apt install curl
 ```
 
 Then again in terminal tab 1:
-```
+```console
 helsinki.fi
 Searching..
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
@@ -120,9 +120,9 @@ Searching..
 Dockerfile produced can be [found here](projects/1_6/Dockerfile).
 
 And the commands that were used to build and run it (executed in /projects/1_6/:
-```
-docker build -t docker-clock .
-docker run docker-clock
+```console
+$ docker build -t docker-clock .
+$ docker run docker-clock
 ```
 
 ## 1.7
@@ -130,7 +130,21 @@ docker run docker-clock
 Dockerfile can be [found here](projects/1_7/Dockerfile). 
 
 The commands that were used to build and run the container (in /projects/1_7/):
+```console
+$ docker build -t curler .
+$ docker run -it curler
 ```
-docker build -t curler .
-docker run -it curler
+
+## 1.8
+
+First we need to create the logs.txt file locally so that we can mount file to file instead of directory to directory (to avoid overwriting other files in dir):
+``` console
+$ touch logs.txt 
 ```
+
+
+Then we run the following command:
+```console
+$ docker run -v "$(pwd)"/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+```
+
