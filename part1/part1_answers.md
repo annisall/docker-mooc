@@ -188,6 +188,16 @@ $ docker build -t frontti frontend-example-docker/
 $ docker run -d -p 5000:5000 frontti
 ```
 
+## 1.13
+
+Dockerfile for running the application in a container can be found [here](projects/1_13/Dockerfile).
+
+It was built and run with following command:
+```console
+$ docker build -t spring .
+$ docker run -d -p 8080:8080 spring
+```
+
 
 
 
