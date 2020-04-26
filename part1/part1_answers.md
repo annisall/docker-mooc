@@ -190,12 +190,22 @@ $ docker run -d -p 5000:5000 frontti
 
 ## 1.13
 
-Dockerfile for running the application in a container can be found [here](projects/1_13/Dockerfile).
+Dockerfile for running the spring application in a container can be found [here](projects/1_13/Dockerfile).
 
-It was built and run with following command:
+It was built and run with following commands:
 ```console
 $ docker build -t spring .
 $ docker run -d -p 8080:8080 spring
+```
+
+## 1.14
+
+Dockerfiel for running the rails application in a container can be found [here](projects/1_14/Dockerfile).
+
+It was built and run with following commands:
+```console
+$ docker build -t rails .
+$ docker run -d -p 3000:3000 rails
 ```
 
 
