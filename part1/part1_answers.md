@@ -208,6 +208,23 @@ $ docker build -t rails .
 $ docker run -d -p 3000:3000 rails
 ```
 
+## 1.16
+Heroku example project running in Heroku [here](https://docker-mooc-annisalli.herokuapp.com/).
+
+## 1.17
+My favorite programming environment is Python environment for machine learning.
+We use Python base image. We need to install libraries for exploring, cleaning and plotting data in addition to library for machine learning. Libraries are listed in requirements.txt file. Git is also needed.
+
+List of libraries installed:
+* Numpy
+* Scipy
+* Pandas
+* Matplotlib
+* Scikit-learn
+
+The image pushed to [DockerHub here](https://hub.docker.com/repository/docker/anniinasalli/python-ml-dev). Dockerfile used for building the image [here](projects/1_17/Dockerfile) and the requirements file listing the dependencies [here](projects/1_17/requirements.txt).
+
+
 
 
 
