@@ -200,7 +200,7 @@ $ docker run -d -p 8080:8080 spring
 
 ## 1.14
 
-Dockerfiel for running the rails application in a container can be found [here](projects/1_14/Dockerfile).
+Dockerfile for running the rails application in a container can be found [here](projects/1_14/Dockerfile).
 
 It was built and run with following commands:
 ```console
