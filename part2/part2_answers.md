@@ -10,5 +10,8 @@ Docker compose file that is used to run the service in port 80 can be found [her
 Docker compose file for running both bakcend and frontend can be found [here](projects/2_3/docker-compose.yml). Since I put the environment variables to docker-compose.yml, I was able to remove them from the Dockerfiles.
 
 ## 2.4
+To scale the compute servers I run following command:
+```docker-compose up --scale compute=3```
 
-
+## 2.5
+The docker-compose.yml that has redis in addition to frontend and backend can be found [here](projects/2_5/docker-compose.yml).

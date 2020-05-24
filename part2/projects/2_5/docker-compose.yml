@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  frontend: 
+    image: anniinasalli/frontend-service
+    ports:
+      - 5000:5000
+    environment:
+      - API_URL=http://localhost:8000
+    container_name: frontti
+
+  redis-service:
+    image: redis
+    restart: unless-stopped
+    expose:
+      - 6379
+    container_name: redis
+
+  backend: 
+    image: anniinasalli/backend-service
+    volumes:
+      - ./logs.txt:/app/logs.txt
+    ports:
+      - 8000:8000
+    environment:
+      - FRONT_URL=http://localhost:5000
+      - REDIS=redis-service
+      - REDIS_PORT=6379
+    container_name: bakki
+    depends_on:
+      - frontend
+      - redis-service
