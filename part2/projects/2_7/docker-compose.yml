@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  frontend: 
+    image: kurkku-frontti
+    ports:
+      - 3000:3000
+    environment:
+      - API_URL=http://localhost:8000
+    container_name: ml-frontti
+
+  backend: 
+    image: kurkku-bakki
+    volumes:
+      - ./model:/src/model
+    ports:
+      - 5000:5000
+    environment:
+      - FRONT_URL=http://localhost:3000
+      
+    container_name: ml-bakki
+    depends_on:
+      - frontend
+      - training
+
+  training:
+    image: kurkku-training
+    volumes:
+      - ./imgs:/src/imgs
+      - ./model:/src/model
+    container_name: ml-train
