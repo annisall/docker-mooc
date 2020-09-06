@@ -41,3 +41,9 @@ events { worker_connections 1024; }
     }
   }
 ```
+
+## 2.9
+The version where the postgres data directory is mounted to local ./database directory can be found [here](projects/2_9/docker-compose.yml). I needed to change the FRONT_URL env variable so that requests work.
+
+## 2.10
+I assume the changes needed are the ones that I did in the previous exercise. At least all the buttons work as intended, so I don't know what else should be changed. 
