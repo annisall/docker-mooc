@@ -14,7 +14,7 @@ services:
     image: anniinasalli/backend-service
     build: ./backend-example-docker
     volumes:
-      - ./logs.txt:/app/logs.txt
+      - ./logs.txt:/logs.txt
     ports:
       - 8000:8000
     environment:
